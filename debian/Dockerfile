@@ -16,6 +16,8 @@ RUN apt-get update && apt-get install -y \
         gdb \
         doxygen \
         graphviz \
+        cppcheck \
+        pylint \
     && rm -rf /var/lib/apt/lists/*
         
 
