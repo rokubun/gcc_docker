@@ -1,4 +1,4 @@
-FROM debian:stretch-slim as rcore_builder
+FROM debian:buster-slim as rcore_builder
 
 # Install some basic tools
 RUN apt-get update && apt-get install -y \
@@ -19,12 +19,4 @@ RUN apt-get update && apt-get install -y \
         cppcheck \
         pylint \
     && rm -rf /var/lib/apt/lists/*
-        
-
-# Get yamlcpp and install it
-ARG YAMLCPP_URL=https://github.com/jbeder/yaml-cpp.git
-ARG YAMLCPP_TAG=yaml-cpp-0.6.2
-
-RUN git clone --depth 1 --branch ${YAMLCPP_TAG} ${YAMLCPP_URL} \
-    && (cd yaml-cpp; cmake -DCMAKE_INSTALL_PREFIX=${USRLOCAL} . ; make -j 8; make install) \
-    && rm -rf yaml-cpp
+    

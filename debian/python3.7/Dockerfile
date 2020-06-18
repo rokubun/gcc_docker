@@ -1,4 +1,4 @@
-FROM python:3.7-slim-stretch
+FROM python:3.7-buster-stretch
 
 # Install some basic tools
 RUN apt-get update && apt-get install -y \
@@ -18,7 +18,6 @@ RUN apt-get update && apt-get install -y \
         graphviz \
         cppcheck \
         pylint \
-        libyaml-cpp-dev \
     && rm -rf /var/lib/apt/lists/* \
     && pip install -U pytest twine
     
