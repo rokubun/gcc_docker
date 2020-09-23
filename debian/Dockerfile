@@ -12,11 +12,14 @@ RUN apt-get update && apt-get install -y \
         tar \
         gzip \
         git \
-        uncrustify \
         gdb \
         doxygen \
         graphviz \
         cppcheck \
         pylint \
+        vim \
+        libyaml-cpp-dev \
+        gcov \
+        gprof \
     && rm -rf /var/lib/apt/lists/*
     
