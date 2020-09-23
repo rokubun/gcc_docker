@@ -19,7 +19,5 @@ RUN apt-get update && apt-get install -y \
         pylint \
         vim \
         libyaml-cpp-dev \
-        gcov \
-        gprof \
     && rm -rf /var/lib/apt/lists/*
     
